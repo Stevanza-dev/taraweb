@@ -1,59 +1,48 @@
-{{-- Landing Page Navbar --}}
-<nav id="navbar" class="navbar-glass fixed top-0 left-0 right-0 z-50 border-b border-transparent">
+{{-- Landing Page Navbar - Flat Comic / Neo-Brutalism --}}
+<nav id="navbar" class="sticky top-0 z-50 bg-white border-b-4 border-black shadow-[0px_4px_0px_0px_rgba(0,0,0,1)]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-18">
+        <div class="flex items-center justify-between h-20">
             {{-- Logo --}}
-            <a href="#" class="flex items-center gap-2 shrink-0">
-                <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background: var(--wt-blue);">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
-                    </svg>
+            <a href="#" class="flex items-center gap-3 shrink-0 group">
+                <div class="w-11 h-11 bg-white border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center p-1 group-hover:translate-x-0.5 group-hover:translate-y-0.5 group-hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] transition-all">
+                    <img src="{{ asset('images/webtara-logo.png') }}" alt="WEB TARA Logo" class="w-full h-full object-contain" />
                 </div>
-                <span class="text-xl font-extrabold tracking-tight" style="color: var(--wt-navy);">
-                    WEB <span style="color: var(--wt-blue);">TARA</span>
+                <span class="text-2xl font-black tracking-tight text-black uppercase">
+                    WEB <span class="bg-blue-600 text-white px-2 py-0.5 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] inline-block -rotate-1">TARA</span>
                 </span>
             </a>
 
             {{-- Desktop Links --}}
-            <div class="hidden lg:flex items-center gap-8">
-                <a href="#beranda" class="text-sm font-semibold hover:text-[var(--wt-blue)] transition-colors">Beranda</a>
-                <a href="#layanan" class="text-sm font-semibold hover:text-[var(--wt-blue)] transition-colors">Layanan</a>
-                <a href="#harga" class="text-sm font-semibold hover:text-[var(--wt-blue)] transition-colors">Paket Harga</a>
-                <a href="#portofolio" class="text-sm font-semibold hover:text-[var(--wt-blue)] transition-colors">Portofolio</a>
-                <a href="#kontak" class="text-sm font-semibold hover:text-[var(--wt-blue)] transition-colors">Kontak</a>
+            <div class="hidden lg:flex items-center gap-7">
+                <a href="#beranda" class="text-sm font-extrabold tracking-wide uppercase text-black hover:text-blue-600 hover:underline decoration-black decoration-2 underline-offset-4 transition-all">Beranda</a>
+                <a href="#layanan" class="text-sm font-extrabold tracking-wide uppercase text-black hover:text-blue-600 hover:underline decoration-black decoration-2 underline-offset-4 transition-all">Layanan</a>
+                <a href="#harga" class="text-sm font-extrabold tracking-wide uppercase text-black hover:text-blue-600 hover:underline decoration-black decoration-2 underline-offset-4 transition-all">Paket Harga</a>
+                <a href="#portofolio" class="text-sm font-extrabold tracking-wide uppercase text-black hover:text-blue-600 hover:underline decoration-black decoration-2 underline-offset-4 transition-all">Keunggulan</a>
+                <a href="#kontak" class="text-sm font-extrabold tracking-wide uppercase text-black hover:text-blue-600 hover:underline decoration-black decoration-2 underline-offset-4 transition-all">Kontak</a>
             </div>
 
             {{-- CTA + Auth --}}
             <div class="hidden lg:flex items-center gap-3">
-                @auth
-                    <a href="{{ route('dashboard') }}" class="btn-primary inline-flex items-center px-5 py-2.5 rounded-xl text-sm font-semibold">
-                        Dashboard
-                    </a>
-                @else
-                    <a href="{{ route('login') }}" class="text-sm font-semibold hover:text-[var(--wt-blue)] transition-colors">Masuk</a>
-                    <a href="#kontak" class="btn-primary inline-flex items-center px-5 py-2.5 rounded-xl text-sm font-semibold">
-                        Konsultasi Gratis
-                    </a>
-                @endauth
+                <a href="#kontak" class="btn-neo-primary px-6 py-2.5 text-xs font-black uppercase tracking-wider">
+                    Konsultasi Gratis
+                </a>
             </div>
 
             {{-- Mobile Hamburger --}}
-            <button id="mobile-toggle" class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" aria-label="Toggle menu">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                </svg>
+            <button id="mobile-toggle" class="lg:hidden p-2 bg-white border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] text-black hover:bg-blue-50 transition-colors" aria-label="Toggle menu">
+                <x-heroicon-o-bars-3 class="w-6 h-6 stroke-black stroke-2" />
             </button>
         </div>
 
         {{-- Mobile Menu --}}
         <div id="mobile-menu" class="mobile-menu lg:hidden">
-            <div class="py-4 flex flex-col gap-3 border-t border-gray-100">
-                <a href="#beranda" class="text-sm font-semibold py-2 hover:text-[var(--wt-blue)] transition-colors">Beranda</a>
-                <a href="#layanan" class="text-sm font-semibold py-2 hover:text-[var(--wt-blue)] transition-colors">Layanan</a>
-                <a href="#harga" class="text-sm font-semibold py-2 hover:text-[var(--wt-blue)] transition-colors">Paket Harga</a>
-                <a href="#portofolio" class="text-sm font-semibold py-2 hover:text-[var(--wt-blue)] transition-colors">Portofolio</a>
-                <a href="#kontak" class="text-sm font-semibold py-2 hover:text-[var(--wt-blue)] transition-colors">Kontak</a>
-                <a href="#kontak" class="btn-primary inline-flex items-center justify-center px-5 py-2.5 rounded-xl text-sm font-semibold mt-2">
+            <div class="py-4 px-4 mb-4 bg-blue-50 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex flex-col gap-3">
+                <a href="#beranda" class="text-sm font-extrabold uppercase py-1 text-black hover:text-blue-600">Beranda</a>
+                <a href="#layanan" class="text-sm font-extrabold uppercase py-1 text-black hover:text-blue-600">Layanan</a>
+                <a href="#harga" class="text-sm font-extrabold uppercase py-1 text-black hover:text-blue-600">Paket Harga</a>
+                <a href="#portofolio" class="text-sm font-extrabold uppercase py-1 text-black hover:text-blue-600">Keunggulan</a>
+                <a href="#kontak" class="text-sm font-extrabold uppercase py-1 text-black hover:text-blue-600">Kontak</a>
+                <a href="#kontak" class="btn-neo-primary w-full py-3 text-xs font-black uppercase tracking-wider text-center mt-2">
                     Konsultasi Gratis
                 </a>
             </div>

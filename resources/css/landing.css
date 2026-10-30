@@ -4,108 +4,194 @@
 
 /*
 |--------------------------------------------------------------------------
-| WEB TARA Landing Page Styles
+| WEB TARA Landing Page Styles - Flat Comic / Neo-Brutalism
 |--------------------------------------------------------------------------
-|
-| Custom CSS for the public-facing landing page. Kept separate from the
-| app.css which handles the authenticated dashboard UI.
-|
+| Bold high-impact aesthetic:
+|  - Solid White & Electric Blue primary palette
+|  - Thick black borders (border-2, border-4, border-black)
+|  - Hard solid offset drop shadows (no blur)
+|  - Extruded 3D text shadow effects
+|  - Graph paper grid backgrounds
+|  - Sharp, geometric, flat design components
+|--------------------------------------------------------------------------
 */
 
-/* ── Theme Tokens ────────────────────────────────────────────────────── */
+@theme {
+    --font-display: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+
+    --color-comic-blue: #2563EB;
+    --color-comic-blue-dark: #1D4ED8;
+    --color-comic-blue-navy: #0F172A;
+    --color-comic-blue-light: #EFF6FF;
+    --color-comic-blue-muted: #DBEAFE;
+    --color-comic-yellow: #FEF08A;
+}
 
 :root {
-    --wt-blue: #1E7BFF;
-    --wt-blue-dark: #0A5FD4;
-    --wt-blue-deeper: #0B3D7A;
-    --wt-lime: #B5FF2E;
-    --wt-lime-dark: #9AE01A;
-    --wt-navy: #0F1B3D;
-    --wt-gray: #4A5568;
-    --wt-light: #F8FAFC;
+    font-family: var(--font-sans);
 }
 
-/* ── Keyframe Animations ─────────────────────────────────────────────── */
+/* ── Graph Paper Grid Pattern ────────────────────────────────────────── */
 
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to   { opacity: 1; transform: translateY(0); }
+.comic-grid {
+    background-size: 28px 28px;
+    background-image: 
+        linear-gradient(to right, rgba(0, 0, 0, 0.07) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.07) 1px, transparent 1px);
 }
 
-@keyframes fadeInLeft {
-    from { opacity: 0; transform: translateX(-40px); }
-    to   { opacity: 1; transform: translateX(0); }
+.comic-grid-blue {
+    background-size: 28px 28px;
+    background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.18) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.18) 1px, transparent 1px);
 }
 
-@keyframes fadeInRight {
-    from { opacity: 0; transform: translateX(40px); }
-    to   { opacity: 1; transform: translateX(0); }
+/* ── 3D Extrusion Hard Text Shadows ──────────────────────────────────── */
+
+.comic-text-shadow {
+    text-shadow: 
+        2px 2px 0px #000, 
+        4px 4px 0px #000;
 }
 
-@keyframes scaleIn {
-    from { opacity: 0; transform: scale(0.9); }
-    to   { opacity: 1; transform: scale(1); }
+.comic-text-shadow-lg {
+    text-shadow: 
+        3px 3px 0px #000, 
+        6px 6px 0px #000;
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50%      { transform: translateY(-12px); }
+.comic-text-shadow-xl {
+    text-shadow: 
+        2px 2px 0px #000,
+        4px 4px 0px #000,
+        6px 6px 0px #000,
+        8px 8px 0px #000;
 }
 
-@keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(30, 123, 255, 0.4); }
-    50%      { box-shadow: 0 0 0 16px rgba(30, 123, 255, 0); }
+.comic-text-shadow-blue {
+    text-shadow: 
+        2px 2px 0px #0F172A,
+        4px 4px 0px #0F172A,
+        6px 6px 0px #1E3A8A;
 }
 
-@keyframes blob-morph {
-    0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-    25%      { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
-    50%      { border-radius: 50% 60% 30% 60% / 30% 60% 70% 40%; }
-    75%      { border-radius: 60% 40% 60% 30% / 60% 40% 30% 60%; }
+.comic-text-shadow-white {
+    text-shadow: 
+        3px 3px 0px #FFFFFF,
+        5px 5px 0px #DBEAFE;
 }
 
-/* ── Animation Utilities ─────────────────────────────────────────────── */
+/* ── Neo-Brutalism Solid Hard Box Shadows ────────────────────────────── */
 
-.animate-fade-up       { animation: fadeInUp 0.8s ease-out forwards; }
-.animate-fade-left     { animation: fadeInLeft 0.8s ease-out forwards; }
-.animate-fade-right    { animation: fadeInRight 0.8s ease-out forwards; }
-.animate-scale-in      { animation: scaleIn 0.6s ease-out forwards; }
-.animate-float         { animation: float 5s ease-in-out infinite; }
-.animate-pulse-glow    { animation: pulse-glow 2s ease-in-out infinite; }
-.animate-blob          { animation: blob-morph 8s ease-in-out infinite; }
-
-.anim-delay-100 { animation-delay: 0.1s; }
-.anim-delay-200 { animation-delay: 0.2s; }
-.anim-delay-300 { animation-delay: 0.3s; }
-.anim-delay-400 { animation-delay: 0.4s; }
-.anim-delay-500 { animation-delay: 0.5s; }
-
-/* ── Scroll Reveal ───────────────────────────────────────────────────── */
-
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+.neo-box {
+    border: 3px solid #000000;
+    box-shadow: 5px 5px 0px 0px #000000;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
+.neo-box-lg {
+    border: 4px solid #000000;
+    box-shadow: 8px 8px 0px 0px #000000;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.reveal.visible.from-left  { animation: fadeInLeft 0.7s ease-out forwards; }
-.reveal.visible.from-right { animation: fadeInRight 0.7s ease-out forwards; }
-
-/* ── Navbar ──────────────────────────────────────────────────────────── */
-
-.navbar-glass {
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+.neo-box-sm {
+    border: 2px solid #000000;
+    box-shadow: 3px 3px 0px 0px #000000;
 }
 
-.navbar-glass.scrolled {
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+.neo-box-interactive {
+    border: 3px solid #000000;
+    box-shadow: 5px 5px 0px 0px #000000;
+    transition: all 0.15s ease-out;
+}
+
+.neo-box-interactive:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 8px 8px 0px 0px #000000;
+}
+
+.neo-box-interactive:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px 0px #000000;
+}
+
+/* ── Neo-Brutalist Buttons ───────────────────────────────────────────── */
+
+.btn-neo-primary {
+    background-color: #2563EB;
+    color: #FFFFFF;
+    border: 3px solid #000000;
+    box-shadow: 4px 4px 0px 0px #000000;
+    font-weight: 800;
+    transition: all 0.15s ease-out;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-neo-primary:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px 0px #000000;
+    background-color: #1D4ED8;
+}
+
+.btn-neo-primary:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0px 0px #000000;
+}
+
+.btn-neo-secondary {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 3px solid #000000;
+    box-shadow: 4px 4px 0px 0px #000000;
+    font-weight: 800;
+    transition: all 0.15s ease-out;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-neo-secondary:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px 0px #000000;
+    background-color: #EFF6FF;
+}
+
+.btn-neo-secondary:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0px 0px #000000;
+}
+
+/* ── Floating Comic Shapes Animations ────────────────────────────────── */
+
+@keyframes float-neo {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-8px) rotate(3deg);
+    }
+}
+
+@keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-float-neo {
+    animation: float-neo 4s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
 }
 
 /* ── Mobile Menu ─────────────────────────────────────────────────────── */
@@ -113,89 +199,9 @@
 .mobile-menu {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease;
+    transition: max-height 0.3s ease;
 }
 
 .mobile-menu.open {
     max-height: 400px;
-}
-
-/* ── Buttons ─────────────────────────────────────────────────────────── */
-
-.btn-primary {
-    background: var(--wt-blue);
-    color: white;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-primary::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.btn-primary:hover {
-    background: var(--wt-blue-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(30, 123, 255, 0.35);
-}
-
-.btn-primary:hover::after {
-    opacity: 1;
-}
-
-.btn-secondary {
-    background: white;
-    color: var(--wt-blue);
-    border: 2px solid var(--wt-blue);
-    transition: all 0.3s ease;
-}
-
-.btn-secondary:hover {
-    background: var(--wt-blue);
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(30, 123, 255, 0.25);
-}
-
-/* ── Cards ───────────────────────────────────────────────────────────── */
-
-.service-card {
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-.service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 60px rgba(30, 123, 255, 0.15);
-}
-
-.pricing-card {
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-.pricing-card:hover {
-    transform: translateY(-6px);
-}
-
-.pricing-card-popular {
-    border: 2px solid var(--wt-blue);
-    box-shadow: 0 0 0 4px rgba(30, 123, 255, 0.12);
-}
-
-.pricing-card-popular:hover {
-    box-shadow: 0 20px 60px rgba(30, 123, 255, 0.2), 0 0 0 4px rgba(30, 123, 255, 0.12);
-}
-
-/* ── Gradient Text ───────────────────────────────────────────────────── */
-
-.gradient-text {
-    background: linear-gradient(135deg, var(--wt-blue), var(--wt-blue-dark));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
 }

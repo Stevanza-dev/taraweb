@@ -1,44 +1,145 @@
-{{-- Advantages / Why Us Section --}}
-<section id="portofolio" class="relative py-20 lg:py-28 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16 reveal">
-            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-4"
-                  style="background: rgba(30,123,255,0.08); color: var(--wt-blue);">
-                Mengapa WEB TARA?
-            </span>
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black mb-4" style="color: var(--wt-navy);">
-                Keunggulan Bekerja Bersama Kami
+{{-- Advantages / Why Us Section - Flat Comic / Neo-Brutalism --}}
+<section id="portofolio" class="relative py-20 lg:py-28 bg-white comic-grid border-b-4 border-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {{-- Section Header --}}
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            {{-- Badge --}}
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-600 text-white border-3 border-black shadow-[3px_3px_0px_0px_#000] text-xs font-black uppercase tracking-wider mb-4 rotate-1">
+                <x-heroicon-s-sparkles class="w-4 h-4 text-yellow-300" />
+                <span>KEUNGGULAN UTAMA</span>
+            </div>
+
+            {{-- 3D Extruded Headline --}}
+            <h2 class="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-black leading-tight mb-4">
+                MENGAPA MEMILIH
+                <span class="bg-blue-600 text-white px-3 py-0.5 border-3 border-black shadow-[4px_4px_0px_0px_#000] inline-block -rotate-1 comic-text-shadow">
+                    WEB TARA?
+                </span>
             </h2>
-            <p class="text-lg max-w-2xl mx-auto" style="color: var(--wt-gray);">
-                Kami berkomitmen memberikan pengalaman terbaik dari awal konsultasi hingga website Anda live.
+
+            <p class="text-base sm:text-lg font-bold text-slate-700 max-w-2xl mx-auto leading-relaxed">
+                Kombinasi kecepatan rekayasa sistem, desain berkarakter kuat, dan jaminan keamanan kode tanpa ribet.
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            @php
-                $advantages = [
-                    ['icon' => 'M13 10V3L4 14h7v7l9-11h-7z', 'title' => 'Cepat & Tepat Waktu', 'desc' => 'Proses pengerjaan website yang efisien dengan timeline jelas. Rata-rata selesai dalam 7-14 hari kerja.', 'color' => '#F59E0B'],
-                    ['icon' => 'M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z', 'title' => 'Kualitas Premium', 'desc' => 'Desain modern dan kode berkualitas tinggi menggunakan teknologi terbaru. Aman, cepat, dan SEO-ready.', 'color' => '#10B981'],
-                    ['icon' => 'M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z', 'title' => 'Support Responsif', 'desc' => 'Tim support siap membantu via WhatsApp. Respons cepat dan solusi yang jelas untuk setiap kendala.', 'color' => 'var(--wt-blue)'],
-                    ['icon' => 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z', 'title' => 'Harga Transparan', 'desc' => 'Tanpa biaya tersembunyi. Anda tahu persis apa yang didapat dan berapa yang dibayar. Bisa dicicil.', 'color' => '#8B5CF6'],
-                    ['icon' => 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15', 'title' => 'Free Revisi', 'desc' => 'Setiap paket termasuk revisi gratis hingga Anda benar-benar puas dengan hasilnya.', 'color' => '#EF4444'],
-                    ['icon' => 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z', 'title' => 'SEO & Performa', 'desc' => 'Optimasi mesin pencari dan kecepatan website agar bisnis Anda mudah ditemukan secara online.', 'color' => '#06B6D4'],
-                ];
-            @endphp
-
-            @foreach ($advantages as $index => $adv)
-            <div class="reveal flex gap-5 p-6 rounded-2xl hover:bg-gray-50 transition-colors" style="animation-delay: {{ $index * 0.1 }}s;">
-                <div class="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0" style="background: {{ $adv['color'] }}15;">
-                    <svg class="w-7 h-7" style="color: {{ $adv['color'] }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="{{ $adv['icon'] }}"/>
-                    </svg>
-                </div>
+        {{-- 6 Neo-Brutalist Advantages Cards --}}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 items-stretch">
+            
+            {{-- Advantage 1: Cepat & Tepat Waktu --}}
+            <div class="bg-white border-4 border-black shadow-[6px_6px_0px_0px_#000] hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[10px_10px_0px_0px_#000] transition-all p-7 flex flex-col justify-between">
                 <div>
-                    <h3 class="text-lg font-bold mb-1" style="color: var(--wt-navy);">{{ $adv['title'] }}</h3>
-                    <p class="text-sm leading-relaxed" style="color: var(--wt-gray);">{{ $adv['desc'] }}</p>
+                    <div class="w-13 h-13 w-12 h-12 bg-yellow-300 border-3 border-black shadow-[3px_3px_0px_0px_#000] flex items-center justify-center text-black mb-5">
+                        <x-heroicon-o-bolt class="w-7 h-7 stroke-black stroke-2" />
+                    </div>
+                    <h3 class="text-xl font-black uppercase tracking-tight text-black mb-2">
+                        Pengerjaan Kilat & Tepat
+                    </h3>
+                    <p class="text-sm font-semibold text-slate-700 leading-relaxed mb-4">
+                        Timeline terencana rapi dengan proses transparan. Rata-rata website selesai dalam rentang 7–14 hari kerja.
+                    </p>
+                </div>
+                <div class="pt-4 border-t-2 border-black flex items-center gap-1.5 text-xs font-black uppercase text-blue-600">
+                    <x-heroicon-o-check class="w-4 h-4 stroke-black stroke-2" />
+                    <span>TIMELINE JELAS TANPA MOLOR</span>
                 </div>
             </div>
-            @endforeach
+
+            {{-- Advantage 2: Kualitas Kode --}}
+            <div class="bg-white border-4 border-black shadow-[6px_6px_0px_0px_#000] hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[10px_10px_0px_0px_#000] transition-all p-7 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-blue-600 border-3 border-black shadow-[3px_3px_0px_0px_#000] flex items-center justify-center text-white mb-5">
+                        <x-heroicon-o-code-bracket-square class="w-7 h-7 stroke-black stroke-2" />
+                    </div>
+                    <h3 class="text-xl font-black uppercase tracking-tight text-black mb-2">
+                        Standar Mutu Modern
+                    </h3>
+                    <p class="text-sm font-semibold text-slate-700 leading-relaxed mb-4">
+                        Fondasi Laravel & Tailwind CSS mutakhir yang solid, tahan uji, bebas celah keamanan, dan siap dikembangkan lanjut.
+                    </p>
+                </div>
+                <div class="pt-4 border-t-2 border-black flex items-center gap-1.5 text-xs font-black uppercase text-blue-600">
+                    <x-heroicon-o-check class="w-4 h-4 stroke-black stroke-2" />
+                    <span>KODE BERSIH & SKALABEL</span>
+                </div>
+            </div>
+
+            {{-- Advantage 3: Dukungan Responsif --}}
+            <div class="bg-white border-4 border-black shadow-[6px_6px_0px_0px_#000] hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[10px_10px_0px_0px_#000] transition-all p-7 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-white border-3 border-black shadow-[3px_3px_0px_0px_#000] flex items-center justify-center text-blue-600 mb-5">
+                        <x-heroicon-o-chat-bubble-left-right class="w-7 h-7 stroke-black stroke-2" />
+                    </div>
+                    <h3 class="text-xl font-black uppercase tracking-tight text-black mb-2">
+                        Komunikasi Langsung
+                    </h3>
+                    <p class="text-sm font-semibold text-slate-700 leading-relaxed mb-4">
+                        Diskusi dan konsultasi kendala melalui WhatsApp langsung dengan tim pengembang tanpa perantara berbelit.
+                    </p>
+                </div>
+                <div class="pt-4 border-t-2 border-black flex items-center gap-1.5 text-xs font-black uppercase text-blue-600">
+                    <x-heroicon-o-check class="w-4 h-4 stroke-black stroke-2" />
+                    <span>RESPONS KILAT VIA WHATSAPP</span>
+                </div>
+            </div>
+
+            {{-- Advantage 4: Harga Transparan --}}
+            <div class="bg-white border-4 border-black shadow-[6px_6px_0px_0px_#000] hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[10px_10px_0px_0px_#000] transition-all p-7 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-blue-500 border-3 border-black shadow-[3px_3px_0px_0px_#000] flex items-center justify-center text-white mb-5">
+                        <x-heroicon-o-banknotes class="w-7 h-7 stroke-black stroke-2" />
+                    </div>
+                    <h3 class="text-xl font-black uppercase tracking-tight text-black mb-2">
+                        Harga Pasti & Jujur
+                    </h3>
+                    <p class="text-sm font-semibold text-slate-700 leading-relaxed mb-4">
+                        Tidak ada biaya tambahan terselubung. Segala rincian fitur tercantum resmi dalam surat penawaran awal.
+                    </p>
+                </div>
+                <div class="pt-4 border-t-2 border-black flex items-center gap-1.5 text-xs font-black uppercase text-blue-600">
+                    <x-heroicon-o-check class="w-4 h-4 stroke-black stroke-2" />
+                    <span>OPSI TERMIN PEMBAYARAN</span>
+                </div>
+            </div>
+
+            {{-- Advantage 5: Bebas Revisi --}}
+            <div class="bg-white border-4 border-black shadow-[6px_6px_0px_0px_#000] hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[10px_10px_0px_0px_#000] transition-all p-7 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-white border-3 border-black shadow-[3px_3px_0px_0px_#000] flex items-center justify-center text-black mb-5">
+                        <x-heroicon-o-arrow-path class="w-7 h-7 stroke-black stroke-2 text-blue-600" />
+                    </div>
+                    <h3 class="text-xl font-black uppercase tracking-tight text-black mb-2">
+                        Revisi Tanpa Cemas
+                    </h3>
+                    <p class="text-sm font-semibold text-slate-700 leading-relaxed mb-4">
+                        Setiap paket sudah dilengkapi jatah revisi gratis untuk memastikan hasil akhir sesuai selera dan arahan brand Anda.
+                    </p>
+                </div>
+                <div class="pt-4 border-t-2 border-black flex items-center gap-1.5 text-xs font-black uppercase text-blue-600">
+                    <x-heroicon-o-check class="w-4 h-4 stroke-black stroke-2" />
+                    <span>JAMINAN KESESUAIAN BRIEF</span>
+                </div>
+            </div>
+
+            {{-- Advantage 6: SEO & Performa --}}
+            <div class="bg-white border-4 border-black shadow-[6px_6px_0px_0px_#000] hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[10px_10px_0px_0px_#000] transition-all p-7 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-yellow-300 border-3 border-black shadow-[3px_3px_0px_0px_#000] flex items-center justify-center text-black mb-5">
+                        <x-heroicon-o-chart-bar class="w-7 h-7 stroke-black stroke-2" />
+                    </div>
+                    <h3 class="text-xl font-black uppercase tracking-tight text-black mb-2">
+                        SEO & Skor Kecepatan
+                    </h3>
+                    <p class="text-sm font-semibold text-slate-700 leading-relaxed mb-4">
+                        Optimasi meta tag otomatis, peta situs Google, dan aset terkompresi sempurna agar bisnis Anda mudah dijumpai di Google.
+                    </p>
+                </div>
+                <div class="pt-4 border-t-2 border-black flex items-center gap-1.5 text-xs font-black uppercase text-blue-600">
+                    <x-heroicon-o-check class="w-4 h-4 stroke-black stroke-2" />
+                    <span>LOLOS GOOGLE WEB VITALS</span>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>

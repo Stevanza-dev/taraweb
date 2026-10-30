@@ -1,29 +1,69 @@
-{{-- Call-to-Action Section --}}
-<section class="relative py-20 lg:py-28 overflow-hidden" style="background: linear-gradient(135deg, var(--wt-blue) 0%, var(--wt-blue-dark) 100%);">
-    {{-- Decorative circles --}}
-    <div class="absolute inset-0 opacity-10">
-        <div class="absolute top-10 left-10 w-40 h-40 border-2 border-white rounded-full"></div>
-        <div class="absolute bottom-10 right-20 w-60 h-60 border-2 border-white rounded-full"></div>
-        <div class="absolute top-1/2 left-1/2 w-80 h-80 border border-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
-    </div>
+{{-- Call-to-Action Section - Flat Comic / Neo-Brutalism --}}
+<section class="relative py-20 lg:py-28 bg-[#F8FAFC] comic-grid border-b-4 border-black overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {{-- Big Neo-Brutalist Box --}}
+        <div class="bg-blue-600 border-4 border-black shadow-[12px_12px_0px_0px_#000] p-8 sm:p-12 lg:p-16 text-center relative overflow-hidden">
+            
+            {{-- Floating Decorative Elements Inside the Box --}}
+            <div class="absolute top-6 left-6 w-12 h-12 bg-white border-3 border-black shadow-[3px_3px_0px_0px_#000] rounded-full hidden sm:block animate-float-neo pointer-events-none"></div>
+            <div class="absolute bottom-6 right-8 w-14 h-14 bg-yellow-300 border-3 border-black shadow-[3px_3px_0px_0px_#000] flex items-center justify-center -rotate-12 hidden sm:flex animate-float-neo pointer-events-none" style="animation-delay: 1.5s;">
+                <x-heroicon-s-star class="w-8 h-8 text-black" />
+            </div>
+            <div class="absolute top-8 right-12 text-white font-black text-2xl hidden md:block select-none pointer-events-none rotate-12">
+                <span class="inline-block px-2.5 py-0.5 bg-black text-white border-2 border-white">✕</span>
+            </div>
 
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center reveal">
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-6">
-            Siap Memulai Proyek Website Anda?
-        </h2>
-        <p class="text-lg mb-10" style="color: rgba(255,255,255,0.8);">
-            Konsultasi gratis dan dapatkan penawaran terbaik dari tim kami. Tanpa komitmen, tanpa biaya awal.
-        </p>
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" class="inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-bold text-base transition-all hover:scale-105 hover:shadow-xl" style="background: var(--wt-lime); color: var(--wt-navy);">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                </svg>
-                Chat WhatsApp Sekarang
-            </a>
-            <a href="#harga" class="inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-bold text-base text-white border-2 border-white/30 hover:bg-white/10 transition-all">
-                Lihat Paket Harga
-            </a>
+            <div class="relative z-10 max-w-3xl mx-auto">
+                {{-- Micro-Badge --}}
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-white text-black border-3 border-black shadow-[3px_3px_0px_0px_#000] text-xs font-black uppercase tracking-wider mb-6 -rotate-1">
+                    <x-heroicon-s-sparkles class="w-4 h-4 text-blue-600" />
+                    <span>KONSULTASI 100% GRATIS</span>
+                </div>
+
+                {{-- Extruded Headline --}}
+                <h2 class="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white leading-tight mb-6 comic-text-shadow-xl">
+                    SIAP MEMBANGUN WEBSITE IMPIAN UNTUK BISNIS ANDA?
+                </h2>
+
+                {{-- Subtitle --}}
+                <p class="text-base sm:text-lg font-bold text-white leading-relaxed mb-10 max-w-2xl mx-auto bg-black/20 p-3 border-2 border-black">
+                    Diskusikan ide dan kebutuhan website Anda bersama tim WEB TARA secara santai. Tanpa ikatan dan dapatkan estimasi biaya yang transparan.
+                </p>
+
+                {{-- Buttons Group --}}
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    {{-- Primary WhatsApp Button --}}
+                    <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" class="px-8 py-4 bg-yellow-300 text-black border-4 border-black shadow-[6px_6px_0px_0px_#000] hover:bg-yellow-200 hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[3px_3px_0px_0px_#000] transition-all font-black text-sm uppercase tracking-wider flex items-center justify-center gap-2.5 w-full sm:w-auto">
+                        <x-heroicon-o-chat-bubble-oval-left-ellipsis class="w-5 h-5 stroke-black stroke-2" />
+                        <span>CHAT VIA WHATSAPP SEKARANG</span>
+                        <x-heroicon-o-arrow-right class="w-5 h-5 stroke-black stroke-2" />
+                    </a>
+
+                    {{-- Secondary Button --}}
+                    <a href="#harga" class="px-8 py-4 bg-white text-black border-4 border-black shadow-[6px_6px_0px_0px_#000] hover:bg-slate-100 hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[3px_3px_0px_0px_#000] transition-all font-black text-sm uppercase tracking-wider flex items-center justify-center gap-2 w-full sm:w-auto">
+                        <span>LIHAT ESTIMASI HARGA</span>
+                    </a>
+                </div>
+
+                {{-- Reassurance Points --}}
+                <div class="mt-12 pt-6 border-t-3 border-black flex flex-wrap items-center justify-center gap-5 sm:gap-8 text-xs font-black uppercase text-white">
+                    <div class="flex items-center gap-1.5 bg-black text-white px-2.5 py-1 border border-white">
+                        <x-heroicon-o-check class="w-4 h-4 stroke-white stroke-2" />
+                        <span>RESPONS CEPAT</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 bg-black text-white px-2.5 py-1 border border-white">
+                        <x-heroicon-o-check class="w-4 h-4 stroke-white stroke-2" />
+                        <span>BIAYA TRANSPARAN</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 bg-black text-white px-2.5 py-1 border border-white">
+                        <x-heroicon-o-check class="w-4 h-4 stroke-white stroke-2" />
+                        <span>GARANSI 100% REVISI</span>
+                    </div>
+                </div>
+
+            </div>
         </div>
+
     </div>
 </section>
