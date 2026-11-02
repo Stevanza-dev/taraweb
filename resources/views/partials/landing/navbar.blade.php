@@ -16,8 +16,9 @@
             <div class="hidden lg:flex items-center gap-7">
                 <a href="#beranda" class="text-sm font-extrabold tracking-wide uppercase text-black hover:text-blue-600 hover:underline decoration-black decoration-2 underline-offset-4 transition-all">Beranda</a>
                 <a href="#layanan" class="text-sm font-extrabold tracking-wide uppercase text-black hover:text-blue-600 hover:underline decoration-black decoration-2 underline-offset-4 transition-all">Layanan</a>
+                <a href="#portofolio" class="text-sm font-extrabold tracking-wide uppercase text-black hover:text-blue-600 hover:underline decoration-black decoration-2 underline-offset-4 transition-all">Portofolio</a>
                 <a href="#harga" class="text-sm font-extrabold tracking-wide uppercase text-black hover:text-blue-600 hover:underline decoration-black decoration-2 underline-offset-4 transition-all">Paket Harga</a>
-                <a href="#portofolio" class="text-sm font-extrabold tracking-wide uppercase text-black hover:text-blue-600 hover:underline decoration-black decoration-2 underline-offset-4 transition-all">Keunggulan</a>
+                <a href="#keunggulan" class="text-sm font-extrabold tracking-wide uppercase text-black hover:text-blue-600 hover:underline decoration-black decoration-2 underline-offset-4 transition-all">Keunggulan</a>
                 <a href="#kontak" class="text-sm font-extrabold tracking-wide uppercase text-black hover:text-blue-600 hover:underline decoration-black decoration-2 underline-offset-4 transition-all">Kontak</a>
             </div>
 
@@ -39,8 +40,9 @@
             <div class="py-4 px-4 mb-4 bg-blue-50 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex flex-col gap-3">
                 <a href="#beranda" class="text-sm font-extrabold uppercase py-1 text-black hover:text-blue-600">Beranda</a>
                 <a href="#layanan" class="text-sm font-extrabold uppercase py-1 text-black hover:text-blue-600">Layanan</a>
+                <a href="#portofolio" class="text-sm font-extrabold uppercase py-1 text-black hover:text-blue-600">Portofolio</a>
                 <a href="#harga" class="text-sm font-extrabold uppercase py-1 text-black hover:text-blue-600">Paket Harga</a>
-                <a href="#portofolio" class="text-sm font-extrabold uppercase py-1 text-black hover:text-blue-600">Keunggulan</a>
+                <a href="#keunggulan" class="text-sm font-extrabold uppercase py-1 text-black hover:text-blue-600">Keunggulan</a>
                 <a href="#kontak" class="text-sm font-extrabold uppercase py-1 text-black hover:text-blue-600">Kontak</a>
                 <a href="#kontak" class="btn-neo-primary w-full py-3 text-xs font-black uppercase tracking-wider text-center mt-2">
                     Konsultasi Gratis

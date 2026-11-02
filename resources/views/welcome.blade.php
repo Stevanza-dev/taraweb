@@ -10,6 +10,9 @@
         {{-- Services Section --}}
         @include('partials.landing.services')
 
+        {{-- Portfolio / Projects Showcase Section --}}
+        @include('partials.landing.portfolio')
+
         {{-- Pricing Section --}}
         @include('partials.landing.pricing')
 

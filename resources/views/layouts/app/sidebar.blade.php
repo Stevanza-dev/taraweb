@@ -16,6 +16,24 @@
                         {{ __('Dashboard') }}
                     </flux:sidebar.item>
                 </flux:sidebar.group>
+
+                <flux:sidebar.group :heading="__('Landing Page CMS')" class="grid mt-4">
+                    <flux:sidebar.item icon="squares-2x2" :href="route('admin.services.index')" :current="request()->routeIs('admin.services.*')">
+                        {{ __('Layanan (Services)') }}
+                    </flux:sidebar.item>
+                    <flux:sidebar.item icon="folder" :href="route('admin.projects.index')" :current="request()->routeIs('admin.projects.*')">
+                        {{ __('Portofolio Proyek') }}
+                    </flux:sidebar.item>
+                    <flux:sidebar.item icon="credit-card" :href="route('admin.pricing.index')" :current="request()->routeIs('admin.pricing.*')">
+                        {{ __('Paket Harga (Pricing)') }}
+                    </flux:sidebar.item>
+                    <flux:sidebar.item icon="sparkles" :href="route('admin.advantages.index')" :current="request()->routeIs('admin.advantages.*')">
+                        {{ __('Keunggulan (Advantages)') }}
+                    </flux:sidebar.item>
+                    <flux:sidebar.item icon="arrow-top-right-on-square" href="/" target="_blank">
+                        {{ __('Lihat Landing Page') }}
+                    </flux:sidebar.item>
+                </flux:sidebar.group>
             </flux:sidebar.nav>
 
             <flux:spacer />

@@ -15,11 +15,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // Seed test user if none exists
+        if (\App\Models\User::count() === 0) {
+            \App\Models\User::factory()->create([
+                'name' => 'Admin WEB TARA',
+                'email' => 'admin@webtara.id',
+            ]);
+        }
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        $this->call([
+            ServiceSeeder::class,
+            PricingPlanSeeder::class,
+            AdvantageSeeder::class,
+            ProjectSeeder::class,
         ]);
     }
 }
